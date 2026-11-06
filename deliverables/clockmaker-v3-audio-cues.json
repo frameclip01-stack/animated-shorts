@@ -1,0 +1,295 @@
+{
+  "sample_rate": 48000,
+  "samples": 480000,
+  "frames": 300,
+  "events": [
+    {
+      "label": "tick",
+      "frame": 0,
+      "seconds": 0.0,
+      "sample": 0
+    },
+    {
+      "label": "tick",
+      "frame": 15,
+      "seconds": 0.5,
+      "sample": 24000
+    },
+    {
+      "label": "tick",
+      "frame": 30,
+      "seconds": 1.0,
+      "sample": 48000
+    },
+    {
+      "label": "tick",
+      "frame": 45,
+      "seconds": 1.5,
+      "sample": 72000
+    },
+    {
+      "label": "tick",
+      "frame": 60,
+      "seconds": 2.0,
+      "sample": 96000
+    },
+    {
+      "label": "tick",
+      "frame": 75,
+      "seconds": 2.5,
+      "sample": 120000
+    },
+    {
+      "label": "tick",
+      "frame": 90,
+      "seconds": 3.0,
+      "sample": 144000
+    },
+    {
+      "label": "tick",
+      "frame": 105,
+      "seconds": 3.5,
+      "sample": 168000
+    },
+    {
+      "label": "tick",
+      "frame": 120,
+      "seconds": 4.0,
+      "sample": 192000
+    },
+    {
+      "label": "tick",
+      "frame": 135,
+      "seconds": 4.5,
+      "sample": 216000
+    },
+    {
+      "label": "tick",
+      "frame": 150,
+      "seconds": 5.0,
+      "sample": 240000
+    },
+    {
+      "label": "tick",
+      "frame": 165,
+      "seconds": 5.5,
+      "sample": 264000
+    },
+    {
+      "label": "tick",
+      "frame": 180,
+      "seconds": 6.0,
+      "sample": 288000
+    },
+    {
+      "label": "tick",
+      "frame": 195,
+      "seconds": 6.5,
+      "sample": 312000
+    },
+    {
+      "label": "tick",
+      "frame": 210,
+      "seconds": 7.0,
+      "sample": 336000
+    },
+    {
+      "label": "tick",
+      "frame": 225,
+      "seconds": 7.5,
+      "sample": 360000
+    },
+    {
+      "label": "tick",
+      "frame": 240,
+      "seconds": 8.0,
+      "sample": 384000
+    },
+    {
+      "label": "tick",
+      "frame": 255,
+      "seconds": 8.5,
+      "sample": 408000
+    },
+    {
+      "label": "tick",
+      "frame": 270,
+      "seconds": 9.0,
+      "sample": 432000
+    },
+    {
+      "label": "tick",
+      "frame": 285,
+      "seconds": 9.5,
+      "sample": 456000
+    },
+    {
+      "label": "wind",
+      "frame": 70,
+      "seconds": 2.3333333333333335,
+      "sample": 112000
+    },
+    {
+      "label": "wind",
+      "frame": 74,
+      "seconds": 2.466666666666667,
+      "sample": 118400
+    },
+    {
+      "label": "wind",
+      "frame": 78,
+      "seconds": 2.6,
+      "sample": 124800
+    },
+    {
+      "label": "wind",
+      "frame": 82,
+      "seconds": 2.7333333333333334,
+      "sample": 131200
+    },
+    {
+      "label": "wind",
+      "frame": 86,
+      "seconds": 2.8666666666666667,
+      "sample": 137600
+    },
+    {
+      "label": "wind",
+      "frame": 90,
+      "seconds": 3.0,
+      "sample": 144000
+    },
+    {
+      "label": "wind",
+      "frame": 94,
+      "seconds": 3.1333333333333333,
+      "sample": 150400
+    },
+    {
+      "label": "wind",
+      "frame": 98,
+      "seconds": 3.2666666666666666,
+      "sample": 156800
+    },
+    {
+      "label": "wind",
+      "frame": 102,
+      "seconds": 3.4,
+      "sample": 163200
+    },
+    {
+      "label": "wind",
+      "frame": 106,
+      "seconds": 3.533333333333333,
+      "sample": 169600
+    },
+    {
+      "label": "activation click",
+      "frame": 120,
+      "seconds": 4.0,
+      "sample": 192000
+    },
+    {
+      "label": "alarm strike",
+      "frame": 120,
+      "seconds": 4.0,
+      "sample": 192000
+    },
+    {
+      "label": "alarm strike",
+      "frame": 150,
+      "seconds": 5.0,
+      "sample": 240000
+    },
+    {
+      "label": "alarm strike",
+      "frame": 156,
+      "seconds": 5.2,
+      "sample": 249600
+    },
+    {
+      "label": "alarm strike",
+      "frame": 162,
+      "seconds": 5.4,
+      "sample": 259200
+    },
+    {
+      "label": "parts rattle",
+      "frame": 132,
+      "seconds": 4.4,
+      "sample": 211200
+    },
+    {
+      "label": "wood jolt",
+      "frame": 150,
+      "seconds": 5.0,
+      "sample": 240000
+    },
+    {
+      "label": "wood jolt",
+      "frame": 168,
+      "seconds": 5.6,
+      "sample": 268800
+    },
+    {
+      "label": "wood jolt",
+      "frame": 186,
+      "seconds": 6.2,
+      "sample": 297600
+    },
+    {
+      "label": "wood jolt",
+      "frame": 264,
+      "seconds": 8.8,
+      "sample": 422400
+    },
+    {
+      "label": "wood jolt",
+      "frame": 276,
+      "seconds": 9.2,
+      "sample": 441600
+    },
+    {
+      "label": "wood jolt",
+      "frame": 288,
+      "seconds": 9.6,
+      "sample": 460800
+    },
+    {
+      "label": "visitor impact",
+      "frame": 195,
+      "seconds": 6.5,
+      "sample": 312000
+    },
+    {
+      "label": "visitor hands up",
+      "frame": 196,
+      "seconds": 6.533333333333333,
+      "sample": 313600
+    },
+    {
+      "label": "loose gear clatter",
+      "frame": 225,
+      "seconds": 7.5,
+      "sample": 360000
+    },
+    {
+      "label": "spring boing",
+      "frame": 240,
+      "seconds": 8.0,
+      "sample": 384000
+    },
+    {
+      "label": "room shake",
+      "frame": 255,
+      "seconds": 8.5,
+      "sample": 408000
+    },
+    {
+      "label": "final comic clunk",
+      "frame": 285,
+      "seconds": 9.5,
+      "sample": 456000
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {bundle} from '@remotion/bundler';
+import {selectComposition,renderStill} from '@remotion/renderer';
+await fs.mkdir('output',{recursive:true});
+const errors=[];
+const onBrowserLog=l=>{if(l.type==='error'){errors.push(l.text);console.error(l.text);}};
+const serveUrl=await bundle({entryPoint:path.resolve('src/index.tsx'),publicDir:null});
+const shared={serveUrl,browserExecutable:process.env.CHROMIUM_EXECUTABLE||'/usr/bin/chromium',chromiumOptions:{gl:'swangle'},timeoutInMilliseconds:180000,onBrowserLog};
+const composition=await selectComposition({...shared,id:'GardenTestFrame'});
+if(composition.width!==360||composition.height!==640||composition.fps!==30||composition.durationInFrames!==1)throw Error('Wrong composition configuration');
+await renderStill({...shared,composition,frame:0,imageFormat:'png',output:'output/garden-test.png'});
+await fs.writeFile('output/render-info.json',JSON.stringify({composition:composition.id,width:360,height:640,fps:30,frame:0,renderedFrames:1,browserErrors:errors},null,2));
+if(errors.length)throw Error(`Render had ${errors.length} browser errors`);
+console.log('Rendered exactly one frame: output/garden-test.png (360 × 640)');

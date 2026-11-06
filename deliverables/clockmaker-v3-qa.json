@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "file": "clockmaker-v3.mp4",
+  "sha256": "4ca3ae5498d25f207fa72c111b1d8cf705264feb95867a3009c79edc724a6160",
+  "video": {
+    "codec": "h264",
+    "dimensions": [
+      360,
+      640
+    ],
+    "fps": "30/1",
+    "decoded_frames": 300,
+    "duration": 10.0,
+    "pixel_format": "yuv420p"
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": "48000",
+    "channels": 2,
+    "start_time": "0.000000",
+    "sample_peak": 0.874997615814209,
+    "activation_frame": 120,
+    "pre_activation_rms": 0.01280062086880207,
+    "post_activation_rms": 0.20007842779159546
+  },
+  "black_frames": [],
+  "frozen_spans_6_frames_or_more": [],
+  "min_frame_difference": 1.3153660300925927,
+  "mean_frame_difference": 5.975105642457885,
+  "inspected_frames": [
+    0,
+    45,
+    90,
+    135,
+    180,
+    195,
+    225,
+    270,
+    299
+  ],
+  "limits": "Pixel checks detect empty/frozen output; facial visibility, clipping and geometry are also reviewed visually on the decoded contact sheet."
+}

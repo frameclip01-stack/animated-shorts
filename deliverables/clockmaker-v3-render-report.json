@@ -1,0 +1,20 @@
+{
+  "mode": "video",
+  "seconds": 289.266681493,
+  "dimensions": [
+    360,
+    640
+  ],
+  "fps": 30,
+  "frames": 300,
+  "errors": [],
+  "mux_seconds": 2.0496070979997967,
+  "picture_and_mux_seconds": 291.3162885909998,
+  "preview_pass_seconds": [
+    40.31,
+    44.4,
+    16.06
+  ],
+  "total_timed_rendering_seconds": 392.0862885909998,
+  "notes": "Full render includes bundle/browser/300-frame encode. Final mux includes BT.709 conversion. Preview timing is separate from development and QA time."
+}

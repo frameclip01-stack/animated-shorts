@@ -1,0 +1,37 @@
+{
+  "name": "cartoon-shorts-engine",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio src/index.tsx --browser-executable=/usr/bin/chromium",
+    "render:frame": "node scripts/render-frame.mjs",
+    "typecheck": "tsc --noEmit",
+    "validate:frame": "python3 scripts/validate-frame.py",
+    "render:workshop": "node scripts/render-workshop.mjs",
+    "validate:workshop": "python3 scripts/validate-workshop.py",
+    "preview:v3": "node scripts/render-v3.mjs --previews",
+    "render:v3": "node scripts/render-v3.mjs",
+    "audio:v3": "python3 scripts/audio-v3.py",
+    "finish:v3": "python3 scripts/finish-v3.py",
+    "qa:v3": "python3 scripts/qa-v3.py"
+  },
+  "dependencies": {
+    "@react-three/fiber": "8.18.0",
+    "@react-three/postprocessing": "2.19.1",
+    "@remotion/bundler": "4.0.541",
+    "@remotion/cli": "4.0.541",
+    "@remotion/renderer": "4.0.541",
+    "@remotion/three": "4.0.541",
+    "@types/react": "18.3.28",
+    "@types/three": "0.170.0",
+    "postprocessing": "6.36.7",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.541",
+    "three": "0.170.0"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "@types/node": "22.19.0"
+  }
+}
