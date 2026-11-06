@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "file": "clockmaker-v4.mp4",
+  "sha256": "2fb99ded14cc77e382af308e882bb23f9d124aa2944371aa1f29d0bbdc86a565",
+  "video": {
+    "codec": "h264",
+    "dimensions": [
+      360,
+      640
+    ],
+    "fps": "30/1",
+    "frames": 150,
+    "duration": 5,
+    "pixel_format": "yuv420p"
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 48000,
+    "channels": 2,
+    "duration": 5.0,
+    "peak": 0.67121422290802
+  },
+  "voiceover": {
+    "source": "assets/audio/AT1.mp3",
+    "recognized_from_final_mp4": "he made an alarm so loud it shook the entire workshop",
+    "matches_requested_sentence": true,
+    "source_correlation": 0.982654668067798,
+    "source_retimed": false,
+    "offset_seconds": 0.22,
+    "verification": "Unconstrained local recognition of decoded final AAC plus waveform comparison against supplied recording."
+  },
+  "black_frames": [],
+  "frozen_windows": [],
+  "min_frame_difference": 2.357468171296296,
+  "mean_frame_difference": 10.276174584032438,
+  "inspected_frames": [
+    0,
+    15,
+    29,
+    30,
+    45,
+    59,
+    62,
+    75,
+    89,
+    90,
+    98,
+    110,
+    120,
+    135,
+    149
+  ],
+  "limitations": "Pixel checks do not prove style quality. Preview and decoded-frame visual inspection are also required."
+}

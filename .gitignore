@@ -1,3 +1,6 @@
 node_modules/
 output/
 .remotion/
+
+# User-supplied source voice stays local; only the authorized final video is published.
+/assets/audio/AT1.mp3

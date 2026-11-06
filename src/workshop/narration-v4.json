@@ -1,0 +1,112 @@
+{
+  "source": "assets/audio/AT1.mp3",
+  "source_sha256": "46c44f960acafa79e9b8fce62d716d65e067c8c22e3e49e071a7dc5fee403f47",
+  "recognized_transcript": "he made an alarm so loud it shook the entire workshop",
+  "expected_transcript": "he made an alarm so loud it shook the entire workshop",
+  "source_duration": 3.5004375,
+  "offset_seconds": 0.22,
+  "method": "PocketSphinx 5.0.4 unconstrained recognition followed by two-pass forced phone/word alignment",
+  "timing_resolution_seconds": 0.01,
+  "note": "Acoustic boundary estimates at 10 ms resolution; not claims of human-labelled exact boundaries. Source audio is not time-stretched.",
+  "words": [
+    {
+      "word": "he",
+      "source_start": 0.0,
+      "source_end": 0.16,
+      "video_start": 0.22,
+      "video_end": 0.38,
+      "start_frame": 7,
+      "end_frame": 11
+    },
+    {
+      "word": "made",
+      "source_start": 0.16,
+      "source_end": 0.38,
+      "video_start": 0.38,
+      "video_end": 0.6,
+      "start_frame": 11,
+      "end_frame": 18
+    },
+    {
+      "word": "an",
+      "source_start": 0.38,
+      "source_end": 0.46,
+      "video_start": 0.6,
+      "video_end": 0.68,
+      "start_frame": 18,
+      "end_frame": 20
+    },
+    {
+      "word": "alarm",
+      "source_start": 0.46,
+      "source_end": 0.85,
+      "video_start": 0.68,
+      "video_end": 1.07,
+      "start_frame": 20,
+      "end_frame": 32
+    },
+    {
+      "word": "so",
+      "source_start": 0.85,
+      "source_end": 1.19,
+      "video_start": 1.07,
+      "video_end": 1.41,
+      "start_frame": 32,
+      "end_frame": 42
+    },
+    {
+      "word": "loud",
+      "source_start": 1.19,
+      "source_end": 1.72,
+      "video_start": 1.41,
+      "video_end": 1.94,
+      "start_frame": 42,
+      "end_frame": 58
+    },
+    {
+      "word": "it",
+      "source_start": 1.72,
+      "source_end": 1.84,
+      "video_start": 1.94,
+      "video_end": 2.06,
+      "start_frame": 58,
+      "end_frame": 62
+    },
+    {
+      "word": "shook",
+      "source_start": 1.84,
+      "source_end": 2.19,
+      "video_start": 2.06,
+      "video_end": 2.41,
+      "start_frame": 62,
+      "end_frame": 72
+    },
+    {
+      "word": "the(2)",
+      "source_start": 2.19,
+      "source_end": 2.3,
+      "video_start": 2.41,
+      "video_end": 2.52,
+      "start_frame": 72,
+      "end_frame": 76
+    },
+    {
+      "word": "entire",
+      "source_start": 2.3,
+      "source_end": 2.77,
+      "video_start": 2.52,
+      "video_end": 2.99,
+      "start_frame": 76,
+      "end_frame": 90
+    },
+    {
+      "word": "workshop",
+      "source_start": 2.77,
+      "source_end": 3.35,
+      "video_start": 2.99,
+      "video_end": 3.57,
+      "start_frame": 90,
+      "end_frame": 107
+    }
+  ]
+}

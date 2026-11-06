@@ -1,0 +1,61 @@
+{
+  "source": "assets/audio/AT1.mp3",
+  "offset_samples": 10560,
+  "sample_rate": 48000,
+  "samples": 240000,
+  "voice_source_samples": 168020,
+  "linear_master_gain": 1.2081621402966338,
+  "retimed": false,
+  "events": [
+    {
+      "label": "tick",
+      "frame": 0,
+      "sample": 0
+    },
+    {
+      "label": "shaking mechanism",
+      "frame": 0,
+      "sample": 0
+    },
+    {
+      "label": "activation on shook",
+      "frame": 62,
+      "sample": 99200
+    },
+    {
+      "label": "alarm",
+      "frame": 62,
+      "sample": 99200
+    },
+    {
+      "label": "alarm",
+      "frame": 68,
+      "sample": 108800
+    },
+    {
+      "label": "alarm",
+      "frame": 74,
+      "sample": 118400
+    },
+    {
+      "label": "parts rattle",
+      "frame": 68,
+      "sample": 108800
+    },
+    {
+      "label": "wood jolt",
+      "frame": 90,
+      "sample": 144000
+    },
+    {
+      "label": "wood jolt",
+      "frame": 121,
+      "sample": 193600
+    },
+    {
+      "label": "wood jolt",
+      "frame": 136,
+      "sample": 217600
+    }
+  ]
+}

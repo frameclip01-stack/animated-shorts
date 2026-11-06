@@ -3,8 +3,9 @@ import {ctex,rep,rng} from '../../templates/bridge/paint';
 import {NOINK} from '../../templates/bridge/ink';
 import {timber,wallpaper,brass,dial} from './textures';
 
-export function workshop(animated=false){
+export function workshop(animated=false,refinement=false){
  const root=new THREE.Group();
+ const movementX=animated?(refinement?-2.85:-2.0):-1.22;
  const rig={clocks:[] as THREE.Group[],hands:[] as THREE.Group[],gears:[] as THREE.Mesh[],loose:[] as THREE.Mesh[],lamp:new THREE.Group()};
  root.userData.rig=rig;
 
@@ -116,8 +117,8 @@ export function workshop(animated=false){
   box(.022,.24,.022,x,2.09,-4.0,steel);torus(.027,.007,x,2.57,-4.0,steel);
  }
  // Open clock movement on a wooden cradle, not an untextured box.
- box(.75,.13,.41,animated?-2.0:-1.22,1.53,-.65,darkwood);
- const movement=new THREE.Group();movement.position.set(animated?-2.0:-1.22,1.62,-.65);root.add(movement);
+ box(.75,.13,.41,movementX,1.53,-.65,darkwood);
+ const movement=new THREE.Group();movement.position.set(movementX,1.62,-.65);root.add(movement);
  box(.57,.64,.055,0,.3,0,mat('#6d6252'),movement);
  for(const [x,y,r,t] of [[-.15,.35,.18,16],[.15,.43,.15,14],[.1,.13,.12,12]])gear(r,t,x,y,.05,.2,movement);
  for(const x of [-.25,.25])for(const y of [.05,.6])add(new THREE.SphereGeometry(.023,8,8),gold,x,y,.09,movement);

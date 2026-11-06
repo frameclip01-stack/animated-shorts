@@ -1,0 +1,20 @@
+{
+  "mode": "video",
+  "seconds": 231.34164370300002,
+  "dimensions": [
+    360,
+    640
+  ],
+  "fps": 30,
+  "frames": 150,
+  "errors": [],
+  "finish_encode_seconds": 1.1186825300001146,
+  "render_and_encode_seconds": 232.46032623300013,
+  "completed_preview_pass_seconds": [
+    60.79,
+    49.68,
+    38.11,
+    27.28
+  ],
+  "note": "Full render/encode timing excludes development, QA, and one interrupted render used to refine opening tracking."
+}

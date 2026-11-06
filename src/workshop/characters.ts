@@ -2,8 +2,9 @@ import * as THREE from 'three';
 import {Pen,blobPts,headBlob,thickAngle} from '../../templates/bridge/toon';
 import {cardShade,CARD_K} from '../../templates/bridge/cardshade';
 import {NOINK} from '../../templates/bridge/ink';
+import {drawContinuousFace,type FaceControls} from './face-controls';
 import {STYLE} from './palette';
-export type Acting={expression?:'proud'|'sleepy'|'focus'|'shock'|'panic'|'deadpan';pose?:'present'|'press'|'cover'|'raised'|'fold';gaze?:number;blink?:number;tilt?:number;lean?:number;poseFrom?:'present'|'press'|'cover'|'raised'|'fold';poseMix?:number};
+export type Acting={expression?:'proud'|'sleepy'|'focus'|'shock'|'panic'|'deadpan';pose?:'present'|'press'|'cover'|'raised'|'fold';gaze?:number;blink?:number;tilt?:number;lean?:number;poseFrom?:'present'|'press'|'cover'|'raised'|'fold';poseMix?:number;layer?:'head'|'body';face?:FaceControls;armPoints?:[[number,number][],[number,number][]]};
 export function character(kind:'visitor'|'maker',position:[number,number,number],camera:THREE.Camera){
  const cv=document.createElement('canvas');cv.width=1200;cv.height=2000;
  const g=cv.getContext('2d')!;g.scale(2,2);const p=new Pen(g);
@@ -13,6 +14,7 @@ export function character(kind:'visitor'|'maker',position:[number,number,number]
  const pose=state.pose??(maker?'fold':'raised'),expr=state.expression??(maker?'deadpan':'shock');
  const tilt=state.tilt??0,lean=state.lean??0,gaze=state.gaze??0,blink=state.blink??0;
 
+ if(state.layer!=='head'){
  // 3.3 head heights; head diameter 266, thin 13-unit limbs.
  p.stroke([[263,693],[256,824],[244,970],[221,970]],13,STYLE.ink);
  p.stroke([[336,695],[345,826],[348,970],[376,970]],13,STYLE.ink);
@@ -24,7 +26,7 @@ export function character(kind:'visitor'|'maker',position:[number,number,number]
  raised:[[[225,481],[186,524],[159,436]],[[369,479],[415,520],[438,423]]],
  cover:[[[225,481],[162,440],[181,306]],[[369,479],[437,429],[416,303]]]
  };
- for(const [index,wanted] of arms[pose].entries()){const source=arms[state.poseFrom??pose][index];const q=state.poseMix??1;const arm=wanted.map((v,i)=>[source[i][0]+(v[0]-source[i][0])*q,source[i][1]+(v[1]-source[i][1])*q] as [number,number]);p.stroke(arm,12,STYLE.ink);const h=arm[arm.length-1];p.dot(h[0],h[1],13,STYLE.ink);}
+ for(const [index,wanted] of (state.armPoints??arms[pose]).entries()){const source=arms[state.poseFrom??pose][index];const q=state.poseMix??1;const arm=wanted.map((v,i)=>[source[i][0]+(v[0]-source[i][0])*q,source[i][1]+(v[1]-source[i][1])*q] as [number,number]);const curve=state.armPoints?new THREE.QuadraticBezierCurve3(new THREE.Vector3(...arm[0],0),new THREE.Vector3(2*arm[1][0]-(arm[0][0]+arm[2][0])/2,2*arm[1][1]-(arm[0][1]+arm[2][1])/2,0),new THREE.Vector3(...arm[2],0)).getPoints(18).map(v=>[v.x,v.y] as [number,number]):arm;p.stroke(curve,12,STYLE.ink);const h=arm[arm.length-1];p.dot(h[0],h[1],13,STYLE.ink);}
  const outline=new THREE.Shape();outline.moveTo(251,421);
  outline.bezierCurveTo(231,438,220,491,220,570);outline.bezierCurveTo(217,641,229,690,265,708);
  outline.bezierCurveTo(298,727,337,720,360,696);outline.bezierCurveTo(383,667,381,614,375,554);
@@ -42,6 +44,10 @@ export function character(kind:'visitor'|'maker',position:[number,number,number]
   p.poly([[264,425],[304,448],[346,424],[335,453],[301,468],[267,450]],'#ebbb6d',4);
   p.stroke([[304,491],[306,652]],4,'#e6a080');p.dot(319,522,4,'#f4c985');p.dot(319,566,4,'#f4c985');
  }
+ g.restore();
+ }
+ if(state.layer!=='body'){
+ g.save();g.translate(300,690);g.rotate(lean);g.translate(-300,-690);
  g.save();g.translate(300,302);g.rotate(tilt);g.translate(-300,-302);
  const pts=blobPts(300,302,{...headBlob(maker?83:67,137,maker?.25:-.2),noise:0.002,rot:maker?.04:-.055,b:128});
  p.shadedFill(pts,STYLE.face,STYLE.faceShadow,lit,140,.42,1.0,1.3);
@@ -55,6 +61,7 @@ export function character(kind:'visitor'|'maker',position:[number,number,number]
   p.poly([[174,252],[179,221],[198,198],[219,190],[230,170],[260,183],[290,176],[330,180],[355,195],[349,208],[309,205],[275,217],[237,211],[208,233],[192,264]],'#694b48',6);
   p.stroke([[204,210],[231,197],[254,202]],4,'#9b6e57');
  }
+ if(state.face){drawContinuousFace(p,g,state.face);}else{
  const eyes=[270+gaze*10,334+gaze*10];
  if(expr==='shock'||expr==='panic'){
   for(const x of eyes){p.ell(x,304,22,25,'#fffaf1',5);p.ell(x+gaze*2,305,7,11,STYLE.ink,0);}
@@ -76,7 +83,9 @@ export function character(kind:'visitor'|'maker',position:[number,number,number]
   if(sleepy)p.ell(306,356,10,7,'#602c43',3);else p.stroke([[290,357],[321,expr==='focus'?360:354]],6,STYLE.ink);
  }
  if(blink>0){for(const x of eyes){g.fillStyle=STYLE.face;g.fillRect(x-27,278,54,32*blink);if(blink>=.9)p.stroke([[x-19,304],[x+19,304]],6,STYLE.ink);}}
+ }
  g.restore();g.restore();
+ }
  }
  draw();
  const tex=new THREE.CanvasTexture(cv);tex.colorSpace=THREE.SRGBColorSpace;tex.anisotropy=8;
